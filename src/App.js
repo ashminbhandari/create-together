@@ -1,6 +1,6 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import { createGlobalStyle } from "styled-components";
+import QuestionAndAnswer from "./components/QuestionAndAnswer";
 
 //ThemeContext at App level
 const ThemeContext = React.createContext('light');
@@ -29,8 +29,9 @@ function App() {
                     <div id="stars3"/>
                 </div>
                 <div id="theme-toggler" onClick={toggleTheme}>
-                    <i className="fa-3x far fa-lightbulb"></i>
+                    <i className="fa-lg far fa-lightbulb"></i>
                 </div>
+                <QuestionAndAnswer text={'What is your name?'}/>
             </div>
         </ThemeContext.Provider>
     );
