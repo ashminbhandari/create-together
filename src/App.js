@@ -10,14 +10,16 @@ function App() {
 
     //Theme toggle
     function toggleTheme() {
-       if(theme === 'light'){
-           setTheme('dark');
-           let root = document.documentElement;
-           console.log(root.style);
-       }
-       else {
-           setTheme('light');
-       }
+        let root = document.documentElement;
+        if (theme === 'light') {
+            setTheme('dark');
+            root.style.setProperty('--primary-color', 'black');
+            root.style.setProperty('--secondary-color', 'white');
+        } else {
+            root.style.setProperty('--primary-color', 'white');
+            root.style.setProperty('--secondary-color', 'black');
+            setTheme('light');
+        }
     }
 
     return (

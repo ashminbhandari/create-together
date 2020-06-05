@@ -1,8 +1,3 @@
-:root {
-    --primary-color: white;
-    --secondary-color: black;
-}
-
 .page-container {
     display: flex;
     justify-content: center;
@@ -26,6 +21,22 @@
     position: fixed;
     top: 20px;
     right: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.row-center-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #stars-container {

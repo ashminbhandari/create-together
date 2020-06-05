@@ -1,11 +1,19 @@
+:root {
+    --font-size: 30px;
+    --primary-color: white;
+    --secondary-color: black;
+}
+
 body,html {
-    font-family: 'LLPixel';
-    font-size: 30px;
     margin: 0;
     padding: 0;
 }
 * {
     box-sizing: border-box;
+    font-family: 'LLPixel';
+    font-size: var(--font-size);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 
