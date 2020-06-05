@@ -1,3 +1,3 @@
-## Create Together
+# Create Together
 
-Create together allows users to draw or play piano with their friends together. 
+Create together is a nifty little project which allows users to jam together realtime on a piano or draw. 
