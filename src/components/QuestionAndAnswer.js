@@ -1,41 +1,24 @@
-import React, {useRef, useState} from "react";
+import React from "react";
 import ReactTypingEffect from 'react-typing-effect';
 import './QuestionAndAnswer.css'
 
-const QuestionAndAnswer = ({text}) => {
-    const [tab, currentTab] = useState('name');
-    const [name, setName] = useState('');
-
-    let entryBox = useRef();
-
-    function nextPrompt() {
-
-    }
-
+const QuestionAndAnswer = ({text, answerRef, choices, answerIsTyped}) => {
     return (
-        <div className="row-center-flex">
-            <div>
-
+        <div>
+            <div id={'question'}>
+                <ReactTypingEffect
+                    text={text}
+                    typingDelay={1000}
+                    speed={100}
+                />
             </div>
-            <div>
-                <ul>
-                    <li className="qNa-list-item">
-                        <ReactTypingEffect
-                            text={text}
-                            typingDelay={1000}
-                            speed={100}
-                        />
-                    </li>
-                    <li className="qNa-list-item">
-                        <input ref={entryBox} id="answer-entry-box" type='text'/>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <p id="arrow" onClick={nextPrompt}>--></p>
-            </div>
+            {
+                answerIsTyped ?  <input ref={answerRef} id="typed-answer" type='text'/> : <></>
+            }
+            {
+                choices ? choices.map((button) => <button className="answer">{button}</button>) : <></>
+            }
         </div>
-
     );
 };
 

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import QuestionAndAnswer from "./components/QuestionAndAnswer";
 
-//ThemeContext at App level
-const ThemeContext = React.createContext('light');
+//Contexts
+import ThemeContext from "./contexts/ThemeContext";
+import UserContext from "./contexts/UserContext";
 
 function App() {
     const [theme, setTheme] = useState('light');
@@ -24,17 +24,21 @@ function App() {
 
     return (
         <ThemeContext.Provider value={theme}>
-            <div className={`${theme} page-container`}>
-                <div id="stars-container">
-                    <div id="stars"/>
-                    <div id="stars2"/>
-                    <div id="stars3"/>
+            <UserContext.Provider value={{
+                name: '',
+                game: ''
+            }}>
+                <div className={`${theme} page-container`}>
+                    <div id="stars-container">
+                        <div id="stars"/>
+                        <div id="stars2"/>
+                        <div id="stars3"/>
+                    </div>
+                    <div id="theme-toggler" onClick={toggleTheme}>
+                        <i className="fa-lg far fa-lightbulb"></i>
+                    </div>
                 </div>
-                <div id="theme-toggler" onClick={toggleTheme}>
-                    <i className="fa-lg far fa-lightbulb"></i>
-                </div>
-                <QuestionAndAnswer text={'What is your name?'}/>
-            </div>
+            </UserContext.Provider>
         </ThemeContext.Provider>
     );
 }
