@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import Draw from "./pages/Sketch";
 
 //Contexts
 import ThemeContext from "./contexts/ThemeContext";
@@ -28,7 +29,7 @@ function App() {
                 name: '',
                 game: ''
             }}>
-                <div className={`${theme} page-container`}>
+                <div className={`${theme} page-container flex-column-center`}>
                     <div id="stars-container">
                         <div id="stars"/>
                         <div id="stars2"/>
@@ -37,6 +38,7 @@ function App() {
                     <div id="theme-toggler" onClick={toggleTheme}>
                         <i className="fa-lg far fa-lightbulb"></i>
                     </div>
+                    <Draw/>
                 </div>
             </UserContext.Provider>
         </ThemeContext.Provider>
