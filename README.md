@@ -1,3 +1,5 @@
-# Create Together (DISCARDED)
+# Create Together
 
-Create together is a nifty little project which allows users to jam together realtime on a piano or draw. 
+Create together is a nifty little project which allows users to jam together realtime on a piano or draw.
+
+#discarded
